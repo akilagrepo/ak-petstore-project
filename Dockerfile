@@ -13,7 +13,8 @@
 #    See the License for the specific language governing permissions and
 #    limitations under the License.
 #
-FROM tomcat:9-jdk21
+FROM tomcat:9.0-jdk11
+
 WORKDIR /usr/src/myapp
 
 # Remove default ROOT webapp
