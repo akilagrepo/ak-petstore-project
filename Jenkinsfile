@@ -53,11 +53,10 @@ pipeline{
             steps {
                 dir('Ansible'){
                   script {
-                        ansiblePlaybook(installation: 'ansible', inventory: '/etc/ansible/hosts', playbook: 'docker.yaml', extras: '--private-key /home/ubuntu/mum-prd-key.pem')  
-                      }
+                         ansiblePlaybook credentialsId: 'ssh', disableHostKeyChecking: true, installation: 'ansible', inventory: '/etc/ansible/', playbook: 'docker.yaml'
+                        }
                    }
               }
         }      
    }
 }
-
